@@ -8,6 +8,14 @@ Rust is not a pure functional programming language either but it does support fu
 - how to write a helloWorld
 - How to ust Cargo, Rust's package manager, build tool
 
+```
+- We can create a project using cargo new.
+- We can build a project using cargo build.
+- We can build and run a project in one step using cargo run.
+- We can build a project without producing a binary to check for errors using cargo check.
+- Instead of saving the result of the build in the same directory as our code, Cargo stores it in the target/debug directory.
+```
+
 1. 文件**命名**：underscore命名法 eg. hello_word.
 2. .rs文件写好后，输入"rustc xx.rs"命令进行**编译**，在相同目录下生成同名的编译文件。再输入"./main"打开文件直接运行。
 ```shell
@@ -49,6 +57,35 @@ edition = "2021"
 6. **In Rust, packages of code are referred to as crates.**
 7. Cargo expects your source files to live inside the src directory. The top-level project directory is just for README files, license information, configuration files, and anything else not related to your code.
 8. **building and running**:
+```shell
+cargo build
+./target/debug/hello_cargo
+```
+1. creates an executable file in target/debug/hello_cargo (or target\debug\hello_cargo.exe on Windows)
+2. Running cargo build for the first time also causes Cargo to create a new file at the top level: Cargo.lock. This file keeps track of the exact versions of dependencies in your project. 
+
+```shell
+cargo run
+```
+compile and run
+
+```shell
+cargo check
+```
+This command quickly checks your code to make sure it compiles but doesn’t produce an executable.We can build a project without producing a binary to check for errors using cargo check.
+- When a project is too big, the compile time is much longer, you can use "cargo check" to know if your project is still compiling!
+- also, use it to make sure it compiles
+
+```shell
+cargo build --release
+```
+We can create a project using cargo new.
+We can build a project using cargo build.
+We can build and run a project in one step using cargo run.
+We can build a project without producing a binary to check for errors using cargo check.
+Instead of saving the result of the build in the same directory as our code, Cargo stores it in the target/debug directory.
+
+
 
 
 
